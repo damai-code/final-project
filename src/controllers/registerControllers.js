@@ -1,10 +1,8 @@
-const router = require("express").Router();
-const UsersModel = require("../models/model-users")();
+const UsersModel = require("../models/users")();
 const bcrypt = require("bcrypt");
-const app = require("../routes/app");
 
-module.exports = function registerControllers() {
-  router.post("/", async (req, res) => {
+module.exports = {
+  register: async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const name = req.body.name;
@@ -30,5 +28,5 @@ module.exports = function registerControllers() {
       console.log(error);
       res.json({ message: "error when create user" });
     }
-  });
+  },
 };
