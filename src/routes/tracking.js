@@ -1,7 +1,6 @@
 const router = require("express").Router();
+const trackingController = require("../controller/tracking");
 
-router.post("/tracking", (req, res) => {
-  res.send("hello");
-});
+router.post("/tracking", trackingController.insert);
 
 module.exports = router;
