@@ -6,8 +6,28 @@ const trackingSchema = new Schema({
   time: { type: String, required: true },
   distance: { type: Number, required: true },
   speed: { type: Number, required: true },
-  startPoint: { type: Number, required: true },
-  endPoint: { type: Number, required: true },
+  startPoint: {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      default: "Point", // 'location.type' must be 'Point'
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true,
+    },
+  },
+  endPoint: {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      default: "Point", // 'location.type' must be 'Point'
+      required: true,
+    },
+    coordinates: {
+      type: [Number],
+      required: true,
+    },
+  },
   createdAAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
