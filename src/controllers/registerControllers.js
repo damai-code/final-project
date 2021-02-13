@@ -13,6 +13,11 @@ module.exports = {
 
       const hashPassword = await bcrypt.hash(password, saltKey);
 
+      const emailRegistered = await UsersModel.findOne({ email });
+      if (emailRegistered) {
+        return res.status(400).json({ message: "Email is already used" });
+      }
+
       await UsersModel.create({
         email: email,
         password: hashPassword,
@@ -25,8 +30,7 @@ module.exports = {
         message: "success insert new users",
       });
     } catch (error) {
-      console.log(error);
-      res.json({ message: "error when create user" });
+      res.json({ message: error });
     }
   },
 };
