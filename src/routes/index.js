@@ -1,5 +1,9 @@
-const trackingRouter = require("./tracking");
+const registerRoutes = require("./register");
+const loginRoutes = require("./login");
+const trackingRoutes = require('./tracking')
 
 module.exports = {
-  trackingRouter,
+  registerRoutes,
+  loginRoutes,
+  trackingRoutes
 };
