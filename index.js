@@ -18,5 +18,6 @@ app.use(bodyParser.json());
 //Router
 app.use(router.registerRoutes);
 app.use(router.loginRoutes);
+app.use(router.trackingRoutes);
 
 app.listen(port, () => console.log("app running on port 4500"));
