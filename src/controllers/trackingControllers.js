@@ -8,13 +8,10 @@ module.exports = {
     try {
       //Get data from body
       const { body } = req;
-      const authenticate = req.headers.authorization;
-
-      //Check token value
-      const verified = jwt.verify(authenticate, secretKey);
+      const email = res.locals.user.email;
 
       //Make new data
-      const trackingData = { ...body, user: verified.email };
+      const trackingData = { ...body, user: email };
 
       //Insert new data to database
       const data = await trackingModel.create(trackingData);
