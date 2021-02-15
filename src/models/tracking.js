@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 const Users = require("./users");
 
 const trackingSchema = new Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
+  user: {
+    type: String,
     ref: Users,
   },
   time: { type: String, required: true },
