@@ -15,25 +15,29 @@ const usersSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: [5, "Email can't be shorter than 5 character"],
+    minlength: [5, "Password can't be shorter than 5 character"],
   },
   name: {
     type: String,
     required: true,
-    minlength: 10,
-    maxlength: 50,
+    maxlength: 25,
   },
   gender: {
-    type: String,
-    default: 0,
-  },
-  images: {
     type: String,
     default: 0,
   },
   intensity: {
     type: Number,
     default: 0,
+  },
+  images: {
+    type: String,
+    default: 0,
+  },
+  roles: {
+    type: String,
+    default: "user",
+    enum: ["user", "admin"],
   },
   salt: {
     type: String,
