@@ -27,14 +27,26 @@ module.exports = {
       }
       //Buat JWT Token
       const token = jwt.sign(
-        { email: users.email, gender: users.gender },
+        {
+          userId: users._id,
+          name: users.name,
+          gender: users.gender,
+          intensity: users.intensity,
+          role: users.roles,
+        },
         secretKey
       );
+      //Cek data gender dan intensity
+      const status = false;
+      if (users.gender !== "0" || users.intensity !== 0) {
+        status = true;
+      }
 
       res.json({
         message: "success login",
         data: {
           token: token,
+          status: status,
         },
       });
     } catch (error) {

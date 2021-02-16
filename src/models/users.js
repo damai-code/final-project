@@ -25,10 +25,12 @@ const usersSchema = new mongoose.Schema({
   gender: {
     type: String,
     default: 0,
+    enum: ["male", "female"],
   },
   intensity: {
     type: Number,
     default: 0,
+    enum: [1, 2, 3],
   },
   images: {
     type: String,
@@ -41,7 +43,6 @@ const usersSchema = new mongoose.Schema({
   },
   salt: {
     type: String,
-    required: true,
   },
   cretedAt: {
     type: Date,
