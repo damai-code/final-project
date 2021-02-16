@@ -9,7 +9,6 @@ module.exports = {
       email: joi.string().required(),
       password: joi.string().required().min(5),
       name: joi.string().required(),
-      gender: joi.string().required(),
     });
     const validation = schema.validate(body);
     if (!validation.error) next();
