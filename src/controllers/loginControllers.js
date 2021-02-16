@@ -64,10 +64,9 @@ module.exports = {
       //Siapkan data yang akan di update
 
       let updateUser = await UsersModel.findByIdAndUpdate(userId, body);
-      console.log(updateUser);
+
       res.status(200).json({
         message: "Success Update Gender and Intensity",
-        data: updateUser,
       });
     } catch (error) {
       res.status(400).json({ message: error });
