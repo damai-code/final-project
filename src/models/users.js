@@ -25,10 +25,14 @@ const usersSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
-    required: true,
+    default: 0,
   },
   images: {
     type: String,
+    default: 0,
+  },
+  intensity: {
+    type: Number,
     default: 0,
   },
   salt: {
