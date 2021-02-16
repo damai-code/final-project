@@ -8,7 +8,7 @@ module.exports = {
     try {
       //Get data from body
       const { body } = req;
-      const email = res.locals.user.email;
+      const email = res.locals.users.email;
 
       //Make new data
       const trackingData = { ...body, user: email };

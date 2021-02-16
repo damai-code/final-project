@@ -25,12 +25,10 @@ const usersSchema = new mongoose.Schema({
   gender: {
     type: String,
     default: 0,
-    enum: ["male", "female"],
   },
   intensity: {
-    type: Number,
+    type: String,
     default: 0,
-    enum: [1, 2, 3],
   },
   images: {
     type: String,
