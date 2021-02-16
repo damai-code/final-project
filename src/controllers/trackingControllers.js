@@ -1,0 +1,23 @@
+//Dependencies
+const trackingModel = require("../models/tracking");
+const jwt = require("jsonwebtoken");
+const secretKey = process.env.SECRETKEY;
+
+module.exports = {
+  insert: async (req, res) => {
+    try {
+      //Get data from body
+      const { body } = req;
+      const email = res.locals.user.email;
+
+      //Make new data
+      const trackingData = { ...body, user: email };
+
+      //Insert new data to database
+      const data = await trackingModel.create(trackingData);
+      res.status(200).json({ message: "succes insert data", data });
+    } catch (error) {
+      res.status(400).json({ message: error });
+    }
+  },
+};
