@@ -33,7 +33,7 @@ const trackingSchema = new Schema({
       required: true,
     },
   },
-  createdAAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
 

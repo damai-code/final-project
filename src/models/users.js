@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
 const usersSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -42,11 +43,11 @@ const usersSchema = new mongoose.Schema({
   salt: {
     type: String,
   },
-  cretedAt: {
+  created_at: {
     type: Date,
     default: Date.now,
   },
-  updatedAt: {
+  updated_at: {
     type: Date,
     default: Date.now,
   },
